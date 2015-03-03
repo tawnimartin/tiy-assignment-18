@@ -1,0 +1,24 @@
+{
+  "name": "intro-to-bdd",
+  "version": "0.0.0",
+  "authors": [
+    "JD Isaacks <jd@jisaacks.com>"
+  ],
+  "description": "An assignment for learning BDD",
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "chai": "~2.0.0",
+    "mocha": "~2.1.0"
+  },
+  "dependencies": {
+    "underscore": "~1.8.1"
+  }
+}
