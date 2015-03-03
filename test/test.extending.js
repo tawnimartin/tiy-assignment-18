@@ -37,6 +37,22 @@ describe("Extending Constructors", function() {
 
   });
 
+  it("Inherits methods", function(){
+
+    var seaVessel = new SeaVessel;
+    var plane = new Plane();
+    var boat = new Boat();
+
+    expect(seaVessel.setSail()).eq("Ahoy!");
+    expect(seaVessel.travel()).eq("Good Bye");
+    expect(plane.takeOff()).eq("Safe Travels!");
+    expect(plane.travel()).eq("Good Bye");
+    expect(boat.travel()).eq("Good Bye");
+    expect(boat.setSail()).eq("Ahoy!");
+    expect(boat.depart()).eq("Anchors Aweigh!");
+
+  });
+
 });
 
 describe("Extending Objects With _.extend", function() {

@@ -13,6 +13,9 @@
 
 function Vehicle() {
   this.isMachine = true;
+  this.travel = function() {
+    return "Good Bye";
+  }
 }
 function LandVehicle() {
   Vehicle.call(this);
@@ -41,18 +44,27 @@ Aircraft.prototype = Object.create(Vehicle.prototype);
 function Plane() {
   Aircraft.call(this);
   this.hasPropeller = true;
+  this.takeOff = function() {
+    return "Safe Travels!";
+  }
 }
 Plane.prototype = Object.create(Aircraft.prototype);
 
 function SeaVessel() {
   Vehicle.call(this);
   this.inWater = true;
+  this.setSail = function() {
+    return "Ahoy!";
+  }
 }
 SeaVessel.prototype = Object.create(Vehicle.prototype);
 
 function Boat() {
   SeaVessel.call(this);
   this.hasOars = true;
+  this.depart = function() {
+    return "Anchors Aweigh!";
+  }
 }
 Boat.prototype = Object.create(SeaVessel.prototype);
 
