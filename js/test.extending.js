@@ -2,49 +2,57 @@
 //Functions extending constructors//
 ////////////////////////////////////
 //I know properties were not necessary to pass the test, but added them as practice.
+//
+//                Vehicle
+//                   |
+//     ---------------------------
+//     |             |            |
+//   Land V.       Aircr.        SeaV.
+//   |    |          |            |
+//  Car Train      Plane         Boat                    
 
 function Vehicle() {
-	this.isMachine = true;
+  this.isMachine = true;
 }
 function LandVehicle() {
-	Vehicle.call(this);
-	this.onLand = true;
+  Vehicle.call(this);
+  this.onLand = true;
 }
 LandVehicle.prototype = Object.create(Vehicle.prototype);
 
 function Car() {
-	LandVehicle.call(this);
-	this.onRoads = true;
+  LandVehicle.call(this);
+  this.onRoads = true;
 }
 Car.prototype = Object.create(LandVehicle.prototype);
 
 function Train() {
-	LandVehicle.call(this);
-	this.onRails = true;
+  LandVehicle.call(this);
+  this.onRails = true;
 }
 Train.prototype = Object.create(LandVehicle.prototype);
 
 function Aircraft() {
-	Vehicle.call(this);
-	this.flies = true;
+  Vehicle.call(this);
+  this.flies = true;
 }
 Aircraft.prototype = Object.create(Vehicle.prototype);
 
 function Plane() {
-	Aircraft.call(this);
-	this.hasPropeller = true;
+  Aircraft.call(this);
+  this.hasPropeller = true;
 }
 Plane.prototype = Object.create(Aircraft.prototype);
 
 function SeaVessel() {
-	Vehicle.call(this);
-	this.inWater = true;
+  Vehicle.call(this);
+  this.inWater = true;
 }
 SeaVessel.prototype = Object.create(Vehicle.prototype);
 
 function Boat() {
-	SeaVessel.call(this);
-	this.hasOars = true;
+  SeaVessel.call(this);
+  this.hasOars = true;
 }
 Boat.prototype = Object.create(SeaVessel.prototype);
 
@@ -57,11 +65,11 @@ var extended = _.extend({}, extendee)
 
 //page is equal to 1, unless another page is passed.
 function params(options) {
-	
-	var implicit = {page: 1};
+  
+  var implicit = {page: 1};
 
-	var thisPage = _.extend({}, implicit, options)
-	return thisPage;
+  var thisPage = _.extend({}, implicit, options)
+  return thisPage;
 }
 
 
